@@ -19,14 +19,14 @@ const rest = new REST({ version: '9' }).setToken(settings.botToken);
 
 (async () => {
   try {
-    console.log('Started refreshing application (/) commands.');
+    console.log('Registering slash commands.');
 
     await rest.put(
       Routes.applicationCommands(settings.botClientId),
       { body: commands },
     );
 
-    console.log('Successfully reloaded application (/) commands.');
+    console.log('Successfully registered slash commands.');
   } catch (error) {
     console.error(error);
   }
@@ -43,10 +43,9 @@ client.on('ready', () => {
         client.user.setActivity(settings.activityMessage, { type: settings.activityType});
         break;
       default:
-        client.user.setActivity('/short', { type: 'PLAYING'});
         break;
     }
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in. I'm ${client.user.tag}!`);
   });
   client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
