@@ -1,0 +1,17 @@
+{
+  "name": "discord-interaction-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "gxjakkap <gunt@guntxjakka.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/gxjakkap/discord-interaction-template#readme",
+  "engines": {"node": "17.0.1"},
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.25.2",
+    "discord.js": "^13.3.1"
+  }
+}
